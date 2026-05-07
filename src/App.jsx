@@ -41,8 +41,11 @@ export default function App() {
           <Route path="/" element={
             <>
               <Hero />
+              <About />
               <Systems />
+              <Projects />
               <WhyChooseUs />
+              <Contact />
             </>
           } />
           {/* SEPARATE PAGES */}

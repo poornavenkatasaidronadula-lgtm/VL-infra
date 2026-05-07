@@ -5,9 +5,9 @@ import './Navbar.css';
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Our Services', href: '/services' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'Contact Us', href: '/#contact' },
 ];
 
 export default function Navbar() {
@@ -21,9 +21,16 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Determine active link based on current path
+  // Determine active link based on current path and hash
   const getIsActive = (href) => {
-    return location.pathname === href;
+    if (href === '/') {
+      return location.pathname === '/' && location.hash === '';
+    }
+    if (href === '/services') {
+      return location.pathname === '/services';
+    }
+    // For hash links
+    return location.pathname === '/' && location.hash === href.replace('/', '');
   };
 
   return (
@@ -53,7 +60,7 @@ export default function Navbar() {
 
         {/* CTA + hamburger */}
         <div className="navbar__right">
-          <Link to="/contact" className="btn btn-primary navbar__cta">Get Quote</Link>
+          <Link to="/#contact" className="btn btn-primary navbar__cta">Get Quote</Link>
           <button
             className={`navbar__hamburger ${menuOpen ? 'open' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -74,7 +81,7 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li><Link to="/contact" className="btn btn-primary" onClick={() => setMenuOpen(false)}>Get a Quote</Link></li>
+          <li><Link to="/#contact" className="btn btn-primary" onClick={() => setMenuOpen(false)}>Get a Quote</Link></li>
         </ul>
       </div>
     </nav>
