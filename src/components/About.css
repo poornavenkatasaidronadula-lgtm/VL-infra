@@ -1,0 +1,148 @@
+.about { position: relative; overflow: hidden; background: transparent; }
+.about__bg-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(42,50,140,0.04) 0%, transparent 70%);
+  top: 50%; left: -200px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.about__layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Left visual */
+.about__visual { position: relative; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.about__badge-vertical {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--clr-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.about__badge-line { flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+
+.about__brand-box {
+  width: 100%;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fb 100%);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 24px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(42,50,140,0.04);
+  transition: box-shadow 0.4s;
+}
+.about__brand-box:hover { box-shadow: 0 12px 50px rgba(0,0,0,0.10), 0 0 30px rgba(42,50,140,0.08); }
+
+.about__brand-icon {
+  width: 100px; height: 100px;
+  background: rgba(255,77,0,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255,77,0,0.2);
+  animation: pulse-fire 3s ease-in-out infinite;
+}
+.about__brand-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.about__brand-name span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1a1d27;
+}
+.about__brand-name strong {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--clr-fire2);
+  letter-spacing: 0.25em;
+}
+.about__brand-tagline { font-size: 0.85rem; color: var(--clr-text-muted); }
+.about__brand-divider { width: 100%; height: 1px; background: rgba(0,0,0,0.07); }
+
+.about__brand-scope { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+.about__scope-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.03);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: #5a6478;
+  text-align: left;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.25s;
+}
+.about__scope-item:hover {
+  background: rgba(42,50,140,0.06);
+  border-color: rgba(42,50,140,0.15);
+  color: #1a1d27;
+}
+
+.about__floating-stat {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255,77,0,0.1);
+  border: 1px solid rgba(255,77,0,0.2);
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+}
+.about__floating-stat span { font-size: 1.6rem; font-weight: 900; }
+.about__floating-stat small { font-size: 0.8rem; color: var(--clr-text-muted); }
+
+/* Right text */
+.about__text { display: flex; flex-direction: column; gap: 20px; }
+.about__title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1a1d27;
+}
+.about__desc { font-size: 0.97rem; color: var(--clr-text-muted); line-height: 1.75; }
+
+.about__pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+.about__pillar {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 20px;
+}
+.about__pillar-icon {
+  width: 44px; height: 44px;
+  background: rgba(42,50,140,0.08);
+  border: 1px solid rgba(42,50,140,0.15);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--clr-fire2);
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.about__pillar:hover .about__pillar-icon {
+  background: rgba(42,50,140,0.14);
+  box-shadow: 0 0 16px rgba(42,50,140,0.12);
+}
+.about__pillar-title { font-size: 0.9rem; font-weight: 700; color: #1a1d27; margin-bottom: 4px; }
+.about__pillar-desc { font-size: 0.8rem; color: var(--clr-text-muted); line-height: 1.5; }
+
+@media (max-width: 1024px) {
+  .about__layout { grid-template-columns: 1fr; }
+  .about__visual { max-width: 400px; margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  .about__pillars { grid-template-columns: 1fr; }
+}
