@@ -9,22 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer__brand">
             <div className="footer__logo">
-              <div className="footer__logo-icon">
-                <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
-                  <path d="M14 2C14 2 6 9 6 16C6 20.4 9.6 24 14 24C18.4 24 22 20.4 22 16C22 9 14 2 14 2Z" fill="url(#fFireGrad)"/>
-                  <path d="M14 10C14 10 10 14 10 17C10 19.2 11.8 21 14 21C16.2 21 18 19.2 18 17C18 14 14 10 14 10Z" fill="rgba(255,255,255,0.85)"/>
-                  <defs>
-                    <linearGradient id="fFireGrad" x1="14" y1="2" x2="14" y2="24" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#ff4d00"/>
-                      <stop offset="100%" stopColor="#ffb347"/>
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div>
-                <div className="footer__logo-name"><span>VL</span> Infra</div>
-                <div className="footer__logo-sub">Fire &amp; Safety Services</div>
-              </div>
+              <img src="/Logo.jpeg" alt="VL Infra Logo" className="footer__logo-img" />
             </div>
             <p className="footer__brand-desc">
               Comprehensive system integrators of fire protection and detection systems — 

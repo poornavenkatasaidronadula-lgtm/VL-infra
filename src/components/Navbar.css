@@ -32,9 +32,10 @@
   flex-shrink: 0;
 }
 .navbar__logo-img {
-  height: 52px;
+  height: 70px;
   width: auto;
   object-fit: contain;
+  mix-blend-mode: multiply;
   transition: transform 0.3s;
 }
 .navbar__logo:hover .navbar__logo-img {
