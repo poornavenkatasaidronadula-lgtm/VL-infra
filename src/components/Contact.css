@@ -73,6 +73,7 @@
   max-width: 300px;
   margin: 0 auto 30px auto;
   display: block;
+  mix-blend-mode: multiply;
 }
 
 .contact__address {
