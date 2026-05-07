@@ -38,21 +38,18 @@ export default function App() {
       <Navbar />
       <main>
         <Routes>
-          {/* HOME PAGE - Services is removed from here */}
           <Route path="/" element={
             <>
               <Hero />
-              <About />
               <Systems />
-              <Projects />
               <WhyChooseUs />
-              <Contact />
             </>
           } />
-          {/* SEPARATE SERVICES PAGE */}
-          <Route path="/services" element={
-            <Services />
-          } />
+          {/* SEPARATE PAGES */}
+          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
