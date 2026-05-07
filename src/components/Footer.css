@@ -1,6 +1,6 @@
 .footer {
-  background: transparent;
-  border-top: 1px solid rgba(0,0,0,0.05);
+  background: #070810;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .footer__top { padding: 64px 0 48px; }
@@ -14,25 +14,25 @@
 .footer__brand { display: flex; flex-direction: column; gap: 16px; }
 .footer__logo { display: flex; align-items: center; gap: 12px; }
 .footer__logo-img {
-  width: 250px;
+  width: 150px;
   height: auto;
-  mix-blend-mode: multiply;
+  border-radius: 8px;
 }
-.footer__brand-desc { font-size: 0.85rem; color: #5a6478; line-height: 1.7; max-width: 280px; }
+.footer__brand-desc { font-size: 0.85rem; color: var(--clr-text-muted); line-height: 1.7; max-width: 280px; }
 
 .footer__socials { display: flex; gap: 10px; }
 .footer__social {
   width: 36px; height: 36px;
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
-  color: #1a1d27;
+  color: var(--clr-text-muted);
   transition: all 0.25s;
 }
 .footer__social:hover {
-  background: #f0f4fa;
-  border-color: rgba(0,0,0,0.1);
+  background: rgba(255,77,0,0.1);
+  border-color: rgba(255,77,0,0.25);
   color: var(--clr-fire2);
   transform: translateY(-2px);
 }
@@ -42,15 +42,15 @@
   font-family: 'Outfit', sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
-  color: #1a1d27;
+  color: #fff;
   margin-bottom: 16px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .footer__col ul { display: flex; flex-direction: column; gap: 10px; list-style: none; }
 .footer__col a {
   font-size: 0.84rem;
-  color: #5a6478;
+  color: var(--clr-text-muted);
   transition: color 0.2s;
   display: block;
 }
@@ -58,7 +58,7 @@
 
 /* Bottom */
 .footer__bottom {
-  border-top: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
   padding: 20px 0;
 }
 .footer__bottom-inner {
@@ -66,7 +66,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: #5a6478;
+  color: var(--clr-text-dim);
 }
 .footer__tagline { color: var(--clr-fire); font-weight: 600; letter-spacing: 0.05em; }
 
