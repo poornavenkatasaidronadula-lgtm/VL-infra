@@ -49,10 +49,10 @@ export default function App() {
             </>
           } />
           {/* SEPARATE PAGES */}
-          <Route path="/services" element={<Services />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<div className="page-offset"><Services /></div>} />
+          <Route path="/projects" element={<div className="page-offset"><Projects /></div>} />
+          <Route path="/about" element={<div className="page-offset"><About /></div>} />
+          <Route path="/contact" element={<div className="page-offset"><Contact /></div>} />
         </Routes>
       </main>
       <Footer />

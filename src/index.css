@@ -71,6 +71,7 @@ button { cursor: pointer; border: none; outline: none; background: none; font-fa
 
 /* ===== UTILITY CLASSES ===== */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.page-offset { padding-top: 100px; }
 .section { padding: var(--section-pad); }
 
 .gradient-text {
