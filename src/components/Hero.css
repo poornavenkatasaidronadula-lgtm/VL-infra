@@ -232,6 +232,22 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px; /* Clear the nav bar */
+    padding-bottom: 60px;
+    align-items: flex-start; /* Push content up but below nav */
+  }
+  .hero__title {
+    font-size: clamp(2.4rem, 8vw, 4.5rem);
+    margin-top: 20px;
+  }
+  .hero__subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+}
+
 @media (max-width: 600px) {
   .hero__actions {
     flex-direction: column;
@@ -239,5 +255,8 @@
   .hero__stats-grid {
     gap: 20px;
     flex-wrap: wrap;
+  }
+  .hero__title {
+    font-size: 2.2rem;
   }
 }
