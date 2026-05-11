@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import imgHeroEpic     from '../assets/hero_epic.png';
 import imgSprinkler      from '../assets/sprinkler.png';
 import imgFireAlarm      from '../assets/fire_alarm.png';
 import imgExtinguisher   from '../assets/extinguisher.png';
@@ -11,6 +12,7 @@ import imgBMS            from '../assets/bms.png';
 import './Hero.css';
 
 const BG_SLIDES = [
+  { img: imgHeroEpic,       label: 'Integrated Fire & Safety',            tag: 'Corporate',     color: '#f97316' },
   { img: imgSprinkler,      label: 'Automatic Fire Sprinkler System',     tag: 'Water-Based',   color: '#0d6efd' },
   { img: imgFireAlarm,      label: 'Automatic Fire Alarm & Detection',    tag: 'Detection',     color: '#ff4d00' },
   { img: imgExtinguisher,   label: 'Fixed & Portable Fire Extinguishers', tag: 'Portable',      color: '#ff7a1a' },
@@ -54,135 +56,109 @@ export default function Hero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* ── Full-bleed background slides ── */}
+      {/* ── Background Slides with Smooth Crossfade ── */}
       <div className="hero__bg-wrap">
         {BG_SLIDES.map((s, i) => (
           <div
             key={i}
             className={`hero__bg-slide ${i === current ? 'active' : i === prev ? 'prev' : ''}`}
             style={{ backgroundImage: `url(${s.img})` }}
-          />
+          >
+            <div className="hero__bg-overlay" />
+          </div>
         ))}
       </div>
 
-      {/* Layered overlays */}
-      <div className="hero__ov hero__ov--base"   />
-      <div className="hero__ov hero__ov--left"   />
-      <div className="hero__ov hero__ov--bottom" />
+      <div className="container hero__container">
+        <div className="hero__content-wrap">
+          <div className="hero__main">
+            {/* badge */}
+            <div className="hero__badge-wrap animate-fade-up">
+              <span className="hero__badge">
+                <span className="hero__badge-dot" />
+                ISO Certified Safety Solutions
+              </span>
+            </div>
 
-      {/* Glow blobs */}
-      <div className="hero__blob hero__blob--1" />
-      <div className="hero__blob hero__blob--2" />
+            {/* Headline */}
+            <h1 className="hero__title animate-fade-up" style={{ animationDelay: '0.1s' }}>
+              Your Safety is<br />
+              Our <span className="gradient-text">Commitment</span>
+            </h1>
 
-      {/* ── MAIN CONTENT – strictly left side ── */}
-      <div className="hero__stage">
-        <div className="hero__content">
+            {/* Subtitle */}
+            <p className="hero__subtitle animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              WE CHANGE THE WAY YOU FIGHT FIRE. Comprehensive protection, 
+              detection, and security systems designed for maximum reliability 
+              across South India.
+            </p>
 
-          {/* Badge */}
-          <div className="badge hero__badge">
-            <span className="hero__dot-pulse" />
-            Certified Fire &amp; Safety Experts
-          </div>
+            {/* Buttons */}
+            <div className="hero__actions animate-fade-up" style={{ animationDelay: '0.3s' }}>
+              <a href="#systems" className="btn btn-primary">
+                Explore Our Systems
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="#contact" className="btn btn-outline">
+                Get a Free Quote
+              </a>
+            </div>
 
-          {/* Headline – 2 clean lines */}
-          <h1 className="hero__headline">
-            Protecting Lives<br />
-            with <span className="hero__fire-text">Advanced</span><br />
-            Fire &amp; Safety
-          </h1>
-
-          {/* Divider accent */}
-          <div className="hero__accent-line" />
-
-          {/* Subtitle */}
-          <p className="hero__sub">
-            Comprehensive fire protection, detection &amp; security —
-            designed, installed and maintained under one roof.
-          </p>
-
-          {/* CTA buttons */}
-          <div className="hero__btns">
-            <a href="#services" className="btn btn-primary hero__btn-main">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-              Explore Services
-            </a>
-            <a href="#contact" className="btn btn-outline hero__btn-sec">
-              Get Free Quote
-            </a>
-          </div>
-
-          {/* Stats */}
-          <div className="hero__stats">
-            {[
-              { v: '27+',  l: 'Projects' },
-              { v: '15+',  l: 'Years Exp.' },
-              { v: '100%', l: 'Compliant' },
-              { v: '24/7', l: 'Support' },
-            ].map(s => (
-              <div className="hero__stat" key={s.l}>
-                <span className="hero__stat-v">{s.v}</span>
-                <span className="hero__stat-l">{s.l}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Trust */}
-          <div className="hero__trust">
-            <div className="hero__avatars">
-              {['R','T','A','K','V'].map((l, i) => (
-                <span key={i} className="hero__av">{l}</span>
+            {/* Stats */}
+            <div className="hero__stats-grid animate-fade-up" style={{ animationDelay: '0.4s' }}>
+              {[
+                { v: '27+',  l: 'Major Projects' },
+                { v: '15+',  l: 'Years Excellence' },
+                { v: '100%', l: 'Compliance' },
+              ].map(s => (
+                <div className="hero__stat-card" key={s.l}>
+                  <span className="hero__stat-val">{s.v}</span>
+                  <span className="hero__stat-label">{s.l}</span>
+                </div>
               ))}
             </div>
-            <p className="hero__trust-txt">
-              Trusted by <strong>27+ companies</strong> across AP &amp; Telangana
-            </p>
           </div>
 
+          {/* Floating HUD - Interactive info about current system */}
+          <div className="hero__hud animate-fade-left">
+            <div className="hero__hud-card card">
+              <div className="hero__hud-tag" style={{ color: slide.color, background: `${slide.color}15` }}>
+                {slide.tag}
+              </div>
+              <h3>{slide.label}</h3>
+              <p>Specialized fire protection solution integrated for industrial and commercial environments.</p>
+              
+              <div className="hero__hud-footer">
+                <div className="hero__progress">
+                  <div 
+                    className="hero__progress-bar" 
+                    key={current}
+                    style={{ 
+                      '--pc': slide.color,
+                      animationPlayState: paused ? 'paused' : 'running'
+                    }} 
+                  />
+                </div>
+                <div className="hero__nav">
+                  <span className="hero__count">{String(current + 1).padStart(2, '0')} / {String(BG_SLIDES.length).padStart(2, '0')}</span>
+                  <div className="hero__dots">
+                    {BG_SLIDES.map((_, i) => (
+                      <button 
+                        key={i} 
+                        className={`hero__dot ${i === current ? 'active' : ''}`}
+                        onClick={() => goTo(i)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* ── BOTTOM HUD ── */}
-      <div className="hero__hud">
-        <div className="hero__hud-info" style={{ borderLeftColor: slide.color }}>
-          <span
-            className="hero__hud-tag"
-            style={{ color: slide.color, background: `${slide.color}18`, borderColor: `${slide.color}40` }}
-          >
-            {slide.tag}
-          </span>
-          <span className="hero__hud-name">{slide.label}</span>
-        </div>
-
-        <div className="hero__dots">
-          {BG_SLIDES.map((s, i) => (
-            <button
-              key={i}
-              aria-label={s.label}
-              className={`hero__dot ${i === current ? 'hero__dot--on' : ''}`}
-              style={{ '--dc': BG_SLIDES[i].color }}
-              onClick={() => goTo(i)}
-            />
-          ))}
-        </div>
-
-        <span className="hero__counter">
-          {String(current + 1).padStart(2, '0')} / {String(BG_SLIDES.length).padStart(2, '0')}
-        </span>
-      </div>
-
-      {/* Progress bar */}
-      <div className="hero__prog">
-        <div
-          className="hero__prog-fill"
-          key={`${current}-prog`}
-          style={{
-            '--pc': slide.color,
-            animationPlayState: paused ? 'paused' : 'running',
-          }}
-        />
       </div>
     </section>
+
   );
 }

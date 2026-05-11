@@ -28,31 +28,42 @@ export default function Footer() {
 
           {/* Services column */}
           <div className="footer__col">
-            <h4>Fire Services</h4>
+            <h4>Fire Protection</h4>
             <ul>
-              {['Fire Hydrant System', 'Sprinkler System', 'Fire Alarm & Detection', 'Gas Suppression (FM-200)', 'Foam Systems', 'Powder Systems'].map(s => (
-                <li key={s}><a href="#services">{s}</a></li>
+              {['Fire Hydrant System', 'Sprinkler System', 'Foam & Spray Systems', 'Gas Suppression', 'Fire Extinguishers', 'System Commissioning'].map(s => (
+                <li key={s}><a href="#systems">{s}</a></li>
               ))}
             </ul>
           </div>
 
           {/* Security column */}
           <div className="footer__col">
-            <h4>Security Services</h4>
+            <h4>Detection & Security</h4>
             <ul>
-              {['CCTV Systems', 'Public Address System', 'BMS Systems', 'Annual Maintenance', 'Fire NOC Consulting', 'System Commissioning'].map(s => (
-                <li key={s}><a href="#services">{s}</a></li>
+              {['Fire Alarm Systems', 'VESDA Systems', 'CCTV Surveillance', 'Public Address System', 'Access Control', 'Rodent Repellent'].map(s => (
+                <li key={s}><a href="#systems">{s}</a></li>
               ))}
             </ul>
           </div>
 
-          {/* Quick links */}
+          {/* Contact column */}
           <div className="footer__col">
-            <h4>Quick Links</h4>
-            <ul>
-              {[['Home', '#home'], ['About Us', '#about'], ['Services', '#services'], ['Systems', '#systems'], ['Projects', '#projects'], ['Contact', '#contact']].map(([label, href]) => (
-                <li key={href}><a href={href}>{label}</a></li>
-              ))}
+            <h4>Get In Touch</h4>
+            <ul className="footer__contact-list">
+              <li>
+                <strong>Hyderabad:</strong><br />
+                H.No. 60-09/8/3, Chintal - 500054
+              </li>
+              <li>
+                <strong>Nellore:</strong><br />
+                26-16-380, Gomathi Nager - 524001
+              </li>
+              <li>
+                <strong>Phone:</strong> +91 9345613232
+              </li>
+              <li>
+                <strong>Email:</strong> sales@vlinfra.in
+              </li>
             </ul>
           </div>
         </div>

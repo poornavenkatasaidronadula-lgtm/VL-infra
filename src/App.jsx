@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Systems from './components/Systems';
 import Projects from './components/Projects';
 import WhyChooseUs from './components/WhyChooseUs';
+import Standards from './components/Standards';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -45,6 +46,7 @@ export default function App() {
               <Systems />
               <Projects />
               <WhyChooseUs />
+              <Standards />
               <Contact />
             </>
           } />
