@@ -74,6 +74,11 @@
   justify-content: center;
 }
 
+.contact__info-text {
+  flex: 1;
+  min-width: 0; /* Allows text to wrap instead of pushing container wide */
+}
+
 .contact__info-text span {
   display: block;
   font-size: 0.85rem;
@@ -84,8 +89,10 @@
 }
 
 .contact__info-text strong {
+  display: block;
   font-size: 1.25rem;
   color: var(--clr-text);
+  word-break: break-word; /* Prevents long emails from breaking layout */
 }
 
 .contact__address-grid {
@@ -178,8 +185,16 @@
     font-size: 2.2rem;
   }
   .contact__info-item {
-    padding: 20px;
-    gap: 16px;
+    padding: 16px 20px;
+    gap: 14px;
+  }
+  .contact__info-text strong {
+    font-size: 1.05rem;
+  }
+  .contact__info-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
   }
   .contact__address-grid {
     grid-template-columns: 1fr;
