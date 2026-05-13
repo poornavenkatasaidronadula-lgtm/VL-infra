@@ -24,7 +24,8 @@ export default function Contact() {
                 <div className="contact__info-icon">📞</div>
                 <div className="contact__info-text">
                   <span>Call Us</span>
-                  <strong>+91 - 93456 13232</strong>
+                  <strong>+91 93456 13232</strong>
+                  <strong>+91 95059 13232</strong>
                 </div>
               </div>
 

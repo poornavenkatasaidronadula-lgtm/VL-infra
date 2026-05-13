@@ -1,6 +1,8 @@
 .footer {
-  background: #070810;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a0e1a 0%, #030408 100%);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .footer__top { padding: 64px 0 48px; }

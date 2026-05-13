@@ -3,7 +3,7 @@ import './Footer.css';
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer noise">
       <div className="footer__top">
         <div className="container footer__top-inner">
           {/* Brand */}
@@ -58,11 +58,14 @@ export default function Footer() {
                 <strong>Nellore:</strong><br />
                 26-16-380, Gomathi Nager - 524001
               </li>
-              <li>
-                <strong>Phone:</strong> +91 9345613232
+              <li style={{ marginTop: '6px' }}>
+                <strong>Phone:</strong><br/>
+                +91 93456 13232<br/>
+                +91 95059 13232
               </li>
-              <li>
-                <strong>Email:</strong> sales@vlinfra.in
+              <li style={{ marginTop: '6px' }}>
+                <strong>Email:</strong><br/>
+                sales@vlinfra.in
               </li>
             </ul>
           </div>
