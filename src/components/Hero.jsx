@@ -72,30 +72,44 @@ export default function Hero() {
       <div className="container hero__container">
         <div className="hero__content-wrap">
           <div className="hero__main">
-            {/* badge */}
+            {/* Badge */}
             <div className="hero__badge-wrap animate-fade-up">
               <span className="hero__badge">
                 <span className="hero__badge-dot" />
-                ISO Certified Safety Solutions
+                Certified Fire &amp; Safety Experts
               </span>
             </div>
 
             {/* Headline */}
             <h1 className="hero__title animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              Your Safety is<br />
-              Our <span className="gradient-text">Commitment</span>
+              Protecting Lives,<br />
+              <span className="hero__title-accent">Securing Futures</span>
             </h1>
+
+            {/* Divider line */}
+            <div className="hero__divider animate-fade-up" style={{ animationDelay: '0.15s' }} />
 
             {/* Subtitle */}
             <p className="hero__subtitle animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              WE CHANGE THE WAY YOU FIGHT FIRE. Comprehensive protection, 
-              detection, and security systems designed for maximum reliability 
-              across South India.
+              Comprehensive fire protection, detection, and security systems — engineered for
+              maximum reliability across South India's industrial &amp; commercial sectors.
             </p>
+
+            {/* Feature chips */}
+            <div className="hero__chips animate-fade-up" style={{ animationDelay: '0.25s' }}>
+              {['Fire Hydrant Systems', 'VESDA Detection', 'Gas Suppression', 'Annual AMC'].map(chip => (
+                <span className="hero__chip" key={chip}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  {chip}
+                </span>
+              ))}
+            </div>
 
             {/* Buttons */}
             <div className="hero__actions animate-fade-up" style={{ animationDelay: '0.3s' }}>
-              <a href="#systems" className="btn btn-primary">
+              <a href="#systems" className="btn btn-primary hero__btn-primary">
                 Explore Our Systems
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -109,9 +123,9 @@ export default function Hero() {
             {/* Stats */}
             <div className="hero__stats-grid animate-fade-up" style={{ animationDelay: '0.4s' }}>
               {[
-                { v: '27+',  l: 'Major Projects' },
-                { v: '15+',  l: 'Years Excellence' },
-                { v: '100%', l: 'Compliance' },
+                { v: '27+',  l: 'Major Projects', icon: '🏗️' },
+                { v: '15+',  l: 'Years Excellence', icon: '⭐' },
+                { v: '100%', l: 'NBF Compliant', icon: '✅' },
               ].map(s => (
                 <div className="hero__stat-card" key={s.l}>
                   <span className="hero__stat-val">{s.v}</span>
