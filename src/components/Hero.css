@@ -5,6 +5,7 @@
   align-items: center;
   overflow: hidden;
   background: var(--clr-bg);
+  padding-top: 90px; /* clear fixed navbar */
 }
 
 /* ── Background Carousel ── */
@@ -332,29 +333,49 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 120px; /* Clear the nav bar */
+    padding-top: 100px;
     padding-bottom: 60px;
-    align-items: flex-start; /* Push content up but below nav */
+    align-items: flex-start;
   }
   .hero__title {
-    font-size: clamp(2.4rem, 8vw, 4.5rem);
-    margin-top: 20px;
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
   }
   .hero__subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  .hero__chips {
+    gap: 8px;
+  }
+  .hero__chip {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+  .hero__stats-grid {
+    gap: 0;
+  }
+  .hero__stat-card {
+    padding: 0 20px 0 0;
+    margin-right: 20px;
   }
 }
 
 @media (max-width: 600px) {
+  .hero {
+    padding-top: 90px;
+  }
   .hero__actions {
     flex-direction: column;
   }
   .hero__stats-grid {
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 16px 0;
+  }
+  .hero__stat-card {
+    padding-right: 16px;
+    margin-right: 16px;
   }
   .hero__title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
