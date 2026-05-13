@@ -5,7 +5,8 @@
   align-items: center;
   overflow: hidden;
   background: var(--clr-bg);
-  padding-top: 90px; /* clear fixed navbar */
+  padding-top: 130px; /* clear fixed navbar with extra breath */
+  padding-bottom: 60px;
 }
 
 /* ── Background Carousel ── */
@@ -191,8 +192,9 @@
 .hero__stats-grid {
   display: flex;
   gap: 0;
-  padding-top: 36px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .hero__stat-card {
@@ -333,7 +335,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 100px;
+    padding-top: 130px;
     padding-bottom: 60px;
     align-items: flex-start;
   }
