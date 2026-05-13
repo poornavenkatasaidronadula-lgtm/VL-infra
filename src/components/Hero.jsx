@@ -21,7 +21,7 @@ const BG_SLIDES = [
   { img: imgDelugeFoam,     label: 'Deluge, Water Spray & Foam',          tag: 'Deluge',        color: '#06b6d4' },
   { img: imgCCTV,           label: 'CCTV Surveillance System',            tag: 'Security',      color: '#4ade80' },
   { img: imgPASystem,       label: 'Public Address System',               tag: 'Communication', color: '#ffd166' },
-  { img: imgBMS,            label: 'BMS — Building Management System',    tag: 'Integrated',    color: '#f472b6' },
+  { img: imgBMS,            label: 'BMS: Building Management System',    tag: 'Integrated',    color: '#f472b6' },
 ];
 
 export default function Hero() {

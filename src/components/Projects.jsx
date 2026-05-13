@@ -188,7 +188,7 @@ export default function Projects() {
         <div className="section-header animate-in">
           <div className="badge">Project Portfolio</div>
           <h2>Our <span className="gradient-text">Success</span> Stories</h2>
-          <p>Trusted by industry leaders across South India — 27+ major projects delivered on time, every time.</p>
+          <p>Trusted by industry leaders across South India. 27+ major projects delivered on time, every time.</p>
         </div>
 
         {/* Stats Bar */}

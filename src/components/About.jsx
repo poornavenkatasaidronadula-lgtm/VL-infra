@@ -38,7 +38,7 @@ const PILLARS = [
       </svg>
     ),
     title: 'One-Stop Solution',
-    desc: 'Design, supply, erection and commissioning — everything under one roof.',
+    desc: 'Design, supply, erection and commissioning: everything under one roof.',
   },
 ];
 

@@ -12,7 +12,7 @@ export default function Footer() {
               <img src="/Logo.jpeg" alt="VL Infra Logo" className="footer__logo-img" />
             </div>
             <p className="footer__brand-desc">
-              Comprehensive system integrators of fire protection and detection systems — 
+              Comprehensive system integrators of fire protection and detection systems,
               serving industries across Andhra Pradesh and Telangana.
             </p>
             <div className="footer__socials">
