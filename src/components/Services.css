@@ -53,6 +53,25 @@
   text-align: justify;
 }
 
+.service-row__readmore {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2a328c;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+.service-row__readmore:hover {
+  color: #f05053;
+  text-decoration: underline;
+}
+
 .service-row__image-wrapper {
   flex: 1;
   display: flex;
