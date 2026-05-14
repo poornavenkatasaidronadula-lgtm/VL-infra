@@ -55,7 +55,7 @@
 
 .service-row__desc--clamped {
   display: -webkit-box;
-  -webkit-line-clamp: 15;
+  -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
