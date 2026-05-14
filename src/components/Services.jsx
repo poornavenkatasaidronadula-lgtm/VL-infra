@@ -138,9 +138,11 @@ export default function Services() {
       >
         <div className="service-row__content">
           <h3 className="service-row__title">{service.title}</h3>
-          <p className={`service-row__desc ${!isExpanded ? 'service-row__desc--clamped' : ''}`}>
-            {service.desc}
-          </p>
+          <div className={`service-row__desc-wrapper ${isExpanded ? 'service-row__desc-wrapper--expanded' : ''}`}>
+            <p className="service-row__desc">
+              {service.desc}
+            </p>
+          </div>
           <div>
             <button 
               className="service-row__readmore" 
