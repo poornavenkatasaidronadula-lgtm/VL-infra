@@ -53,6 +53,13 @@
   text-align: justify;
 }
 
+.service-row__desc--clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 15;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .service-row__readmore {
   display: inline-block;
   margin-top: 10px;
