@@ -190,7 +190,6 @@ export default function Services() {
             <p className="service-row__desc">
               {service.shortDesc}
               <TypewriterText text={service.extraDesc} isExpanded={isExpanded} />
-              {isExpanded && <span className="typewriter-cursor">|</span>}
             </p>
           </div>
 
