@@ -1,27 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import imgHeroEpic     from '../assets/hero_epic.png';
-import imgSprinkler      from '../assets/sprinkler.png';
-import imgFireAlarm      from '../assets/fire_alarm.png';
-import imgExtinguisher   from '../assets/extinguisher.png';
-import imgCleanAgent     from '../assets/clean_agent.png';
-import imgGasSuppression from '../assets/gas_suppression.png';
-import imgDelugeFoam     from '../assets/deluge_foam.png';
-import imgCCTV           from '../assets/cctv.png';
-import imgPASystem       from '../assets/pa_system.png';
-import imgBMS            from '../assets/bms.png';
+import { Link } from 'react-router-dom';
+import imgHeroBg1 from '../assets/hero_bg_light_1.png';
+import imgHeroBg2 from '../assets/hero_bg_light_2.png';
+import imgHeroBg3 from '../assets/hero_bg_light_3.png';
+import imgHeroBg4 from '../assets/hero_bg_light_4.png';
+import imgHeroBg5 from '../assets/hero_bg_light_5.png';
 import './Hero.css';
 
 const BG_SLIDES = [
-  { img: imgHeroEpic,       label: 'Integrated Fire & Safety',            tag: 'Corporate',     color: '#f97316' },
-  { img: imgSprinkler,      label: 'Automatic Fire Sprinkler System',     tag: 'Water-Based',   color: '#0d6efd' },
-  { img: imgFireAlarm,      label: 'Automatic Fire Alarm & Detection',    tag: 'Detection',     color: '#ff4d00' },
-  { img: imgExtinguisher,   label: 'Fixed & Portable Fire Extinguishers', tag: 'Portable',      color: '#ff7a1a' },
-  { img: imgCleanAgent,     label: 'Clean Agent Fire Suppression',        tag: 'FM-200®',       color: '#00b4d8' },
-  { img: imgGasSuppression, label: 'Gas Suppression System',              tag: 'Gas-Based',     color: '#a78bfa' },
-  { img: imgDelugeFoam,     label: 'Deluge, Water Spray & Foam',          tag: 'Deluge',        color: '#06b6d4' },
-  { img: imgCCTV,           label: 'CCTV Surveillance System',            tag: 'Security',      color: '#4ade80' },
-  { img: imgPASystem,       label: 'Public Address System',               tag: 'Communication', color: '#ffd166' },
-  { img: imgBMS,            label: 'BMS: Building Management System',    tag: 'Integrated',    color: '#f472b6' },
+  { img: imgHeroBg1, label: 'Industrial Fire Safety',          tag: 'Corporate',   color: '#f97316' },
+  { img: imgHeroBg2, label: 'Advanced Clean Agent Systems',    tag: 'Suppression', color: '#00b4d8' },
+  { img: imgHeroBg3, label: 'Heavy-duty Hydrant Networks',     tag: 'Protection',  color: '#ff4d00' },
+  { img: imgHeroBg4, label: 'Intelligent Fire Detection',      tag: 'Detection',   color: '#eab308' },
+  { img: imgHeroBg5, label: '24/7 CCTV & Security Monitoring', tag: 'Security',    color: '#4ade80' },
 ];
 
 export default function Hero() {
@@ -31,20 +22,19 @@ export default function Hero() {
   const timerRef = useRef(null);
 
   const advance = () => {
-    setCurrent(c => { setPrev(c); return (c + 1) % BG_SLIDES.length; });
+    setPrev(current);
+    setCurrent((current + 1) % BG_SLIDES.length);
   };
 
   useEffect(() => {
     if (paused) return;
     timerRef.current = setInterval(advance, 4500);
     return () => clearInterval(timerRef.current);
-  }, [paused]);
+  }, [paused, current]);
 
   const goTo = (i) => {
     setPrev(current);
     setCurrent(i);
-    clearInterval(timerRef.current);
-    if (!paused) timerRef.current = setInterval(advance, 4500);
   };
 
   const slide = BG_SLIDES[current];
@@ -53,8 +43,6 @@ export default function Hero() {
     <section
       className="hero"
       id="home"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
     >
       {/* ── Background Slides with Smooth Crossfade ── */}
       <div className="hero__bg-wrap">
@@ -97,13 +85,18 @@ export default function Hero() {
 
             {/* Feature chips */}
             <div className="hero__chips animate-fade-up" style={{ animationDelay: '0.25s' }}>
-              {['Fire Hydrant Systems', 'VESDA Detection', 'Gas Suppression', 'Annual AMC'].map(chip => (
-                <span className="hero__chip" key={chip}>
+              {[
+                { name: 'Fire Hydrant Systems', id: 'hydrant' },
+                { name: 'VESDA Detection', id: 'vesda' },
+                { name: 'Gas Suppression', id: 'gas' },
+                { name: 'Annual AMC', id: 'amc' }
+              ].map(chip => (
+                <Link to={`/services#${chip.id}`} className="hero__chip" key={chip.name} style={{ textDecoration: 'none' }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                     <polyline points="20 6 9 17 4 12"/>
                   </svg>
-                  {chip}
-                </span>
+                  {chip.name}
+                </Link>
               ))}
             </div>
 
@@ -123,8 +116,8 @@ export default function Hero() {
             {/* Stats */}
             <div className="hero__stats-grid animate-fade-up" style={{ animationDelay: '0.4s' }}>
               {[
-                { v: '27+',  l: 'Major Projects', icon: '🏗️' },
-                { v: '15+',  l: 'Years Excellence', icon: '⭐' },
+                { v: '300+', l: 'Major Projects', icon: '🏗️' },
+                { v: '10+',  l: 'Years Excellence', icon: '⭐' },
                 { v: '100%', l: 'NBF Compliant', icon: '✅' },
               ].map(s => (
                 <div className="hero__stat-card" key={s.l}>
@@ -137,7 +130,11 @@ export default function Hero() {
 
           {/* Floating HUD - Interactive info about current system */}
           <div className="hero__hud animate-fade-left">
-            <div className="hero__hud-card card">
+            <div 
+              className="hero__hud-card card"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
               <div className="hero__hud-tag" style={{ color: slide.color, background: `${slide.color}15` }}>
                 {slide.tag}
               </div>

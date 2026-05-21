@@ -1,6 +1,6 @@
 import React from 'react';
 import './Systems.css';
-import imgServicesBg from '../assets/services_bg.png';
+import imgServicesBg from '../assets/systems_bg_light.png';
 
 const SYSTEMS = [
   {
@@ -107,9 +107,9 @@ export default function Systems() {
 
       <div className="container">
         <div className="section-header animate-in">
-          <div className="badge badge--white">Our Systems</div>
-          <h2 className="white-text">Specialized <span className="gradient-text">Engineering</span> Solutions</h2>
-          <p className="white-text">We design, supply, install and maintain high-performance safety infrastructure.</p>
+          <div className="badge">Our Systems</div>
+          <h2>Specialized <span className="gradient-text">Engineering</span> Solutions</h2>
+          <p>We design, supply, install and maintain high-performance safety infrastructure.</p>
         </div>
 
         <div className="systems__grid">

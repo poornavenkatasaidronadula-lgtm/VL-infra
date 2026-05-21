@@ -52,10 +52,10 @@ export default function About() {
             <div className="about__image-container">
               <img src={imgAboutTeam} alt="VL Infra Professional Team" className="about__image" />
               <div className="about__image-overlay" />
-              <div className="about__experience-badge">
-                <span className="about__exp-val">15+</span>
-                <span className="about__exp-label">Years of<br />Excellence</span>
-              </div>
+            </div>
+            <div className="about__experience-badge">
+              <span className="about__exp-val">10+</span>
+              <span className="about__exp-label">Years of<br />Excellence</span>
             </div>
           </div>
 

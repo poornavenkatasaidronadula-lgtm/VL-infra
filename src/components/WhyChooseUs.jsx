@@ -29,6 +29,10 @@ export default function WhyChooseUs() {
   return (
     <section className="choose section" id="choose">
       <div className="container">
+        <div className="section-header animate-in">
+          <h2>Why <span className="gradient-text">VL Infra</span></h2>
+        </div>
+        
         <div className="choose__grid card">
           <div className="choose__content">
             <div className="badge">Why VL Infra</div>

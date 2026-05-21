@@ -17,6 +17,8 @@ import imgWaterCurtain from '../assets/water_curtain.png';
 import imgBladderTank from '../assets/bladder_tank.png';
 import imgWaterMonitor from '../assets/water_monitor.png';
 import imgTalkBack from '../assets/talk_back.png';
+import imgVesda from '../assets/service_vesda.png';
+import imgAMC from '../assets/service_amc.png';
 
 const FIRE_SERVICES = [
   {
@@ -95,6 +97,13 @@ const FIRE_SERVICES = [
     title: 'Water Monitor System',
     shortDesc: 'Heavy-duty industrial water and foam monitor cannons designed to deliver massive volumes of extinguishing agents accurately over extreme distances. These highly robust cannons can be manually operated, oscillating, or remote-controlled via a central command station. They are engineered to combat severe, high-hazard fires where it is unsafe for personnel to approach closely. Essential for marine docks, offshore platforms, tank farms, and massive waste recycling plants. Capable of discharging up to 10,000 liters per minute, these monitors feature internal flow vanes.',
     extraDesc: ' to minimize turbulence and maximize throw range. Remote-controlled models utilize explosion-proof electric or hydraulic motors, allowing a single operator to sit safely in a fortified control room while directing the massive water stream with pinpoint accuracy using a joystick. Automatic oscillating monitors can be set to continuously sweep a specific arc, providing relentless cooling to adjacent storage tanks to prevent the fire from escalating into a catastrophic BLEVE (Boiling Liquid Expanding Vapor Explosion).'
+  },
+  {
+    id: 'vesda',
+    image: imgVesda,
+    title: 'VESDA Detection System',
+    shortDesc: 'Very Early Smoke Detection Apparatus (VESDA) provides the earliest possible warning of a potential fire by continuously drawing air into a high-sensitivity laser detection chamber. Ideal for highly critical environments where even the slightest smoke can cause catastrophic damage, such as data centers, clean rooms, and archival vaults.',
+    extraDesc: ' By detecting smoke at the incipient stage, long before it is visible to the naked eye, VESDA allows facility managers to investigate and neutralize the threat before any fire suppression systems are activated, preventing unnecessary equipment downtime and water damage.'
   }
 ];
 
@@ -105,13 +114,6 @@ const SECURITY_SERVICES = [
     title: 'CCTV Surveillance',
     shortDesc: 'Complete video surveillance solutions with high-definition IP and analog cameras, advanced DVR/NVR setups, and remote monitoring capabilities. Designed to protect your premises 24/7, providing unparalleled visibility, intelligent motion detection, and secure cloud storage for industrial, commercial, and residential properties. Our systems feature night vision, thermal imaging options, and AI-powered analytics like facial recognition and license plate reading. We utilize ultra-high-definition 4K sensors paired with motorized varifocal lenses.',
     extraDesc: ' ensuring that even the most minute details—like a trespasser’s face or a vehicle’s license plate—can be clearly identified from hundreds of feet away. Built-in infrared illuminators allow for perfect visibility in pitch-black conditions. Advanced Video Management Software (VMS) allows security personnel to set up virtual tripwires and intrusion zones, triggering instant push notifications to mobile devices the moment unauthorized access is detected. Furthermore, our robust Network Video Recorders utilize RAID storage configurations to ensure months of video footage are securely archived without risk of data loss.'
-  },
-  {
-    id: 'sec-alarm',
-    image: imgAlarm, 
-    title: 'Fire Alarm System',
-    shortDesc: 'Our comprehensive fire alarm panels range from simple conventional setups to highly intelligent addressable systems. Equipped with full communication capabilities, they instantly alert occupants and authorities, forming the backbone of your building’s life safety strategy. We integrate multi-sensor detectors and manual call points that are monitored 24/7 by a central station, ensuring rapid dispatch of emergency services. Addressable panels allow security teams to instantly identify the exact room and floor where a fire has broken out.',
-    extraDesc: ' saving precious minutes during the critical early stages of a response. These panels are networked to control building access control systems, automatically unlocking electronically secured doors during an alarm to facilitate rapid evacuation. In high-rise applications, the system automatically coordinates elevator recall operations, bringing all cars to the ground floor and preventing occupants from accidentally stepping into a smoke-filled lobby. System health is continuously self-monitored, generating automatic fault alerts if a sensor is disconnected or covered in dust.'
   },
   {
     id: 'pa',
@@ -133,6 +135,13 @@ const SECURITY_SERVICES = [
     title: 'Talk Back System',
     shortDesc: 'Crucial two-way communication systems designed for emergency scenarios, allowing trapped individuals or rescue workers to communicate directly with the control room. Talk back systems are strategically installed in fire refuge areas, stairwells, and elevator lobbies. Featuring heavy-duty, tamper-proof master and slave intercom units, they guarantee crystal-clear voice transmission even in highly noisy environments, ensuring coordinated and successful rescue operations. When thick smoke severely limits visibility and radio signals fail to penetrate thick concrete walls.',
     extraDesc: ' the hardwired Talk Back system becomes the only lifeline for first responders and trapped civilians. The master control station features a highly intuitive layout, allowing the fire chief to instantly see which remote stations are calling for help. The handsets are constructed from indestructible polycarbonate and feature noise-canceling microphones to ensure that panicked voices are heard clearly over the roar of a fire. The entire network is backed by independent dual power supplies, guaranteeing operation even during a total facility blackout.'
+  },
+  {
+    id: 'amc',
+    image: imgAMC,
+    title: 'Annual Maintenance Contract (AMC)',
+    shortDesc: 'Comprehensive preventative and corrective maintenance services for all your fire and security systems. Our Annual Maintenance Contracts (AMC) guarantee that your critical life safety equipment remains 100% operational, compliant with local fire codes, and ready to deploy at a moment’s notice.',
+    extraDesc: ' Our highly trained engineers conduct rigorous periodic testing, component calibration, and system health checks. By identifying and resolving potential faults before they escalate into critical failures, our AMC programs extend the lifespan of your equipment and provide unparalleled peace of mind.'
   }
 ];
 
@@ -181,6 +190,7 @@ export default function Services() {
     return (
       <div 
         key={service.id} 
+        id={service.id}
         className={`service-row ${isEven ? 'service-row--even' : 'service-row--odd'}`}
       >
         <div className="service-row__content">

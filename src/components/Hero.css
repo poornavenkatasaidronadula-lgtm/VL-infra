@@ -234,14 +234,15 @@
 
 /* ── HUD Card Right Side ── */
 .hero__hud-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 15, 0.45);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero__hud-tag {
